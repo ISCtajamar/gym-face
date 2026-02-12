@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gym AI Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gym AI Access Control</h1>
+
+        <div class="main-grid">
+            <section class="camera-card">
+                <video id="video" autoplay></video>
+                <canvas id="canvas" style="display:none;" width="400" height="300"></canvas>
+                
+                <div class="form-group">
+                    <input type="text" id="socioId" placeholder="ID del Socio">
+                    <select id="tipoUsuario">
+                        <option value="Socio">Soy Socio</option>
+                        <option value="Invitado">Vengo como Invitado</option>
+                    </select>
+                    <select id="salaDestino">
+                        <option value="1">Musculación</option>
+                        <option value="2">Fitness</option>
+                        <option value="3">Piscina</option>
+                        <option value="4">Cycling</option>
+                        <option value="5">Cafetería</option>
+                    </select>
+                    <button id="btnAcceso">CAPTURAR Y REGISTRAR</button>
+                </div>
+                <p id="msg"></p>
+            </section>
+
+            <section class="dashboard">
+                <div class="stats">
+                    <div class="stat-box">
+                        <h3>Socios</h3>
+                        <span id="countSocios">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Invitados</h3>
+                        <span id="countInvitados">0</span>
+                    </div>
+                </div>
+                <div id="listaSalas" class="room-list">
+                    <h3>Aforo por Salas</h3>
+                    </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
