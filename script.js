@@ -4,9 +4,9 @@ const msg = document.getElementById('msg');
 const btnAcceso = document.getElementById('btnAcceso');
 
 // --- CONFIGURACIÓN AZURE (Sustituye con tus datos) ---
-const FACE_ENDPOINT = "https://TU_RECURSO.cognitiveservices.azure.com/face/v1.0/detect?returnFaceAttributes=emotion";
-const FACE_KEY = "TU_API_KEY";
-const BACKEND_URL = "https://TU_AZURE_FUNCTION.azurewebsites.net/api/registro";
+const FACE_ENDPOINT = "https://p25f.cognitiveservices.azure.com/";
+const FACE_KEY = "9a8Wugx62TulTEW69cszxarYiEaQm7TbRT9fyoz40tZgRPwCVTuFJQQJ99CBACfhMk5XJ3w3AAAKACOGW6M4";
+const BACKEND_URL = "https://p25fa.azurewebsites.net/api/registro";
 
 // Iniciar cámara
 navigator.mediaDevices.getUserMedia({ video: true })
