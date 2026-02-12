@@ -1,0 +1,21 @@
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+.container { max-width: 1000px; margin: auto; }
+h1 { text-align: center; color: #1a73e8; }
+
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+
+.camera-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+#video { width: 100%; border-radius: 8px; background: #000; margin-bottom: 15px; }
+
+.form-group { display: flex; flex-direction: column; gap: 10px; }
+input, select, button { padding: 12px; border-radius: 6px; border: 1px solid #ddd; font-size: 16px; }
+button { background: #1a73e8; color: white; border: none; font-weight: bold; cursor: pointer; }
+button:hover { background: #1557b0; }
+
+.stats { display: flex; gap: 15px; margin-bottom: 20px; }
+.stat-box { flex: 1; background: #1a73e8; color: white; padding: 15px; border-radius: 10px; text-align: center; }
+.stat-box h3 { margin: 0; font-size: 14px; }
+.stat-box span { font-size: 24px; font-weight: bold; }
+
+.room-list { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+#msg { font-weight: bold; margin-top: 10px; }
