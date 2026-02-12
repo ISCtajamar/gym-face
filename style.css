@@ -1,89 +1,99 @@
-/* Paleta de colores: 
-   Naranja: #FF8C00 (Energía)
-   Azul: #003366 (Confianza/Profesional)
-   Fondo: #1a1a1a (Oscuro/Moderno)
-*/
+/* Colores Gym Moderno */
+:root {
+    --primary-blue: #004A99;
+    --accent-orange: #FF8C00;
+    --dark-bg: #121212;
+    --card-bg: #1E1E1E;
+    --text-light: #F5F5F5;
+    --text-dim: #B0B0B0;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a1a; /* Fondo oscuro tipo gimnasio moderno */
-    color: #eeeeee;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
     margin: 0;
-    padding: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
+    width: 100%;
     max-width: 1100px;
-    margin: auto;
+    padding: 20px;
 }
 
 h1 {
     text-align: center;
-    color: #FF8C00;
+    color: var(--accent-orange);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #003366;
-    display: inline-block;
-    width: 100%;
-    padding-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
 }
 
-/* Diseño para Ordenador (Escritorio) */
+/* --- GRID PRINCIPAL --- */
 .main-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* La cámara un poco más grande que el dashboard */
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
-    margin-top: 20px;
 }
 
+/* Tarjetas Estilo App */
 .camera-card, .room-list {
-    background: #2d2d2d;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    border-left: 5px solid #003366;
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    border: 1px solid #333;
 }
 
 #video {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
     background: #000;
-    border: 2px solid #FF8C00;
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 0 15px rgba(0, 74, 153, 0.3);
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 input, select {
-    padding: 12px;
-    background: #3d3d3d;
-    border: 1px solid #003366;
+    padding: 14px;
+    background: #2A2A2A;
+    border: 1px solid #444;
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-orange);
+    outline: none;
 }
 
 button {
-    background: #FF8C00;
+    background: linear-gradient(135deg, var(--accent-orange), #e67e00);
     color: #000;
-    padding: 15px;
-    font-weight: bold;
+    padding: 16px;
+    font-weight: 900;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     text-transform: uppercase;
-    transition: 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
 }
 
-button:hover {
-    background: #e67e00;
-    transform: scale(1.02);
-}
-
+/* Dashboard Stats */
 .stats {
     display: flex;
     gap: 15px;
@@ -92,48 +102,57 @@ button:hover {
 
 .stat-box {
     flex: 1;
-    background: #003366;
-    color: white;
-    padding: 20px;
-    border-radius: 12px;
+    background: linear-gradient(180deg, #1e1e1e, #141414);
+    padding: 15px;
+    border-radius: 15px;
     text-align: center;
-    border-bottom: 4px solid #FF8C00;
+    border: 1px solid #333;
 }
 
-.stat-box h3 { margin: 0; font-size: 0.9rem; text-transform: uppercase; }
-.stat-box span { font-size: 2rem; font-weight: bold; color: #FF8C00; }
-
-#msg {
-    font-weight: bold;
-    margin-top: 15px;
-    text-align: center;
+.stat-box h3 { 
+    margin: 0; 
+    font-size: 0.75rem; 
+    color: var(--text-dim);
+    text-transform: uppercase;
 }
 
-/* --- ADAPTACIÓN PARA MÓVIL (Responsive) --- */
+.stat-box span { 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color: var(--accent-orange); 
+}
+
+/* --- ADAPTACIÓN MÓVIL "APP STYLE" --- */
 @media (max-width: 768px) {
+    body { padding: 10px; }
+    
+    .container { padding: 5px; }
+
     .main-grid {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 15px;
     }
 
-    h1 {
-        font-size: 1.5rem;
-    }
+    h1 { font-size: 1.4rem; margin-top: 10px; }
 
     .camera-card {
-        order: 1; /* La cámara primero */
-    }
-
-    .dashboard {
-        order: 2; /* Los datos después */
-        margin-top: 20px;
-    }
-
-    .stats {
-        flex-direction: row; /* Mantener socios e invitados en paralelo pero más pequeños */
-    }
-
-    input, select, button {
-        font-size: 18px; /* Botones más grandes para dedos */
         padding: 15px;
+        border-radius: 25px 25px 15px 15px; /* Bordes redondeados tipo iOS */
+    }
+
+    .stat-box {
+        padding: 12px;
+    }
+
+    .stat-box span { font-size: 1.5rem; }
+
+    /* Botones más grandes para fácil acceso táctil */
+    button {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .room-list {
+        border-radius: 15px 15px 25px 25px;
     }
 }
